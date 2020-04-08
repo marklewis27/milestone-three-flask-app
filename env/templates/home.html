@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
 {% block title %}
-home,
+home
 {% endblock %}
 {% block content %}
-<p>Home page for the visual studio code flask tutorial.</p>
+<p>Home page fostudio code flask tutorial.</p>
+{% for task in tasks %}
+    {{task.task_model}}
+    {{task.task_name}}
+{% endfor %}
 {% endblock %}

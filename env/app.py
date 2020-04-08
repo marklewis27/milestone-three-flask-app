@@ -1,38 +1,36 @@
-from flask import Flask
+from flask import Flask, redirect, request, url_for
 from datetime import datetime
 from flask import render_template
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 import re
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://me:Internal27@myfirstcluster-x6esz.mongodb.net/task_manager?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://Mark:Markpassword@cluster0-x6esz.mongodb.net/task_manager?retryWrites=true&w=majority'
 
 mongo= PyMongo(app)
 
 @app.route("/")
+@app.route("/home")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", tasks=mongo.db.tasks.find())
 
-@app.route("/about/")
-def about():
-    return render_template("about.html")
 
-@app.route("/contact/")
-def contact():
-    return render_template("contact.html")    
+@app.route("/new/")
+def new():
+    return render_template("new.html")
 
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello_there(name):
-    return render_template(
-        "hello_there.html",
-        name=name,
-        date=datetime.now()
-    )
+@app.route("/search/")
+def search():
+    return render_template("search.html")
 
-@app.route("/api/data")
-def get_data():
-    return app.send_static_file("data.json")
+@app.route("/update/")
+def update():
+    return render_template("update.html")
+
+@app.route("/delete/")
+def delete():
+    return render_template("delete.html")
