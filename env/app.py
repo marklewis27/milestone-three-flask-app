@@ -27,12 +27,7 @@ def new():
 def insert_car():
     cars = mongo.db.cars
     cars.insert_one(request.form.to_dict())
-    return redirect(url_for('home'))
-
-
-@app.route("/search/")
-def search():
-    return render_template("search.html")
+    return redirect(url_for("/home"))
 
 
 @app.route("/update/")

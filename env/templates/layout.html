@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+
+    <link rel="shortcut icon" href="favicon.ico">
+    
     <!-- Link to the style sheet for the main template of the site -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
 </head>
@@ -14,7 +17,6 @@
     </div>
     <div>
         <a href="{{ url_for('new') }}" class="database-options">Create new entry</a>
-        <a href="{{ url_for('search') }}" class="database-options">Search for a particular car</a>
         <a href="{{ url_for('update') }}" class="database-options">Update an entry</a>
         <a href="{{ url_for('delete') }}" class="database-options">Delete a car</a>
     </div>

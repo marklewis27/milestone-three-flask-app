@@ -3,14 +3,31 @@
 home
 {% endblock %}
 {% block content %}
-<p>Home page for studio code flask tutorial.</p>
-{% for car in cars %}
-    {{car.car_make}}
-    {{car.car_model}}
-    {{car.car_fuel_type}}
-    {{car.car_engine_size}}
-    {{car.car_gearbox_type}}
-    {{car.car_mileage}}
-    {{car.car_colour}}
-{% endfor %}
+
+<div>
+    <h1>Welcome to the use car database</h1>
+    <h3>Click on the car manufacturer to look at the cars avalible</h3>
+    <h5>To create a new entry, update a cars details or delete a car just click on the associated buttons</h5>
+
+    <div class="dropdown">
+        <button class="dropbtn">
+            {% for car in cars %}
+                {{car.car_make}}
+
+            <div class="dropdown-content">    
+                <span>
+                {{car.car_model}}    
+                {{car.car_fuel_type}}
+                {{car.car_engine_size}}
+                {{car.car_gearbox_type}}
+                {{car.car_mileage}}
+                {{car.car_colour}}
+                </span>
+            </div>
+            {% endfor %}
+        </button>
+    </div>
+
+</div>
+
 {% endblock %}
