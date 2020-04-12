@@ -3,9 +3,14 @@
 home
 {% endblock %}
 {% block content %}
-<p>Home page fostudio code flask tutorial.</p>
-{% for task in tasks %}
-    {{task.task_model}}
-    {{task.task_name}}
+<p>Home page for studio code flask tutorial.</p>
+{% for car in cars %}
+    {{car.car_make}}
+    {{car.car_model}}
+    {{car.car_fuel_type}}
+    {{car.car_engine_size}}
+    {{car.car_gearbox_type}}
+    {{car.car_mileage}}
+    {{car.car_colour}}
 {% endfor %}
 {% endblock %}

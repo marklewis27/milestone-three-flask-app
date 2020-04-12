@@ -16,20 +16,29 @@ mongo= PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", tasks=mongo.db.tasks.find())
+    return render_template("home.html", cars=mongo.db.cars.find())
 
 
 @app.route("/new/")
 def new():
     return render_template("new.html")
 
+@app.route('/insert_car', methods=['POST'])
+def insert_car():
+    cars = mongo.db.cars
+    cars.insert_one(request.form.to_dict())
+    return redirect(url_for('home'))
+
+
 @app.route("/search/")
 def search():
     return render_template("search.html")
 
+
 @app.route("/update/")
 def update():
     return render_template("update.html")
+
 
 @app.route("/delete/")
 def delete():

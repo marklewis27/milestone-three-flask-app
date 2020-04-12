@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <!-- Link to the style sheet for the main template of the site -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
 </head>
 
-<body>
+<body id="main">
     <div class="navbar">
         <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
     </div>
