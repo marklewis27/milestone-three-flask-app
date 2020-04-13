@@ -3,45 +3,48 @@
 New page 
 {% endblock %}
 {% block content %}
+<div class="container">
+    <H1>Add a new car to the database</H1>
+    <form action="{{ url_for('insert_car') }}" method="POST">
 
-<H1>Add a new car to the database</H1>
-<form action="{{ url_for('insert_car') }}" method="POST">
+        <label for="">Car make</label>
+        <input type="text" id="car_make" name="car_make"><br>
 
-    <label for="">Car make</label><br>
-    <input type="text" id="car_make" name="car_make"><br>
+        <label for="">Car model</label>
+        <input type="text" id="car_model" name="car_model"><br>
 
-    <label for="">Car model</label><br>
-    <input type="text" id="car_model" name="car_model"><br>
+        <label>Fuel type test</label>
+            <select class="browser-default" name="car_fuel_type" id="car_fuel_type">
+                <option value="" disabled selected>Please select one</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Hybrid">Hybrid</option>
+            </select><br>
+            
+        <label for="">Engine size</label>
+            <select class="browser-default" name="car_engine_size" id="car_engine_size">
+                <option value="" disabled selected>Please select one</option>
+                <option value="less than 1.0">Less than 1 litre</option>
+                <option value="1.0 to 1.3">1.0 to 1.3 litre</option>
+                <option value="1.4 to 1.7">1.4 to 1.7 litre</option>
+                <option value="1.8 to 2.0">1.8 to 2.0 litre</option>
+                <option value="over 2.0">Over 2.0 litre</option>
+            </select><br>
 
-    <label for="">Car fuel type</label><br>
-    <select name="car_fuel_type" id="car_fuel_type">
-        <option value="petrol">Petrol</option>
-        <option value="Diesel">Diesel</option>
-    </select><br>
+        <label for="">Gearbox type</label>
+            <select class="browser-default" name="car_gearbox_type" id="car_gearbox_type">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+                <option value="semi-automatic">semi-automatic</option>
+            </select><br>
 
-    <label for="">Engine size</label><br>
-    <select name="car_engine_size" id="car_engine_size">
-        <option value="less than 1.0">Less than 1 litre</option>
-        <option value="1.0 to 1.3">1.0 to 1.3 litre</option>
-        <option value="1.4 to 1.7">1.4 to 1.7 litre</option>
-        <option value="1.8 to 2.0">1.8 to 2.0 litre</option>
-        <option value="over 2.0">Over 2.0 litre</option>
-    </select><br>
+        <label for="">Car Mileage</label>
+        <input type="text" id="car_mileage" name="car_mileage"><br>
 
-    <label for="">Gearbox type</label><br>
-    <select name="car_gearbox_type" id="car_gearbox_type">
-        <option value="Manual">Manual</option>
-        <option value="Automatic">Automatic</option>
-        <option value="semi-automatic">semi-automatic</option>
-    </select><br>
+        <label for="">Car colour</label>
+        <input type="text" id="car_colour" name="car_colour"><br>
 
-    <label for="">Car Mileage</label><br>
-    <input type="text" id="car_mileage" name="car_mileage"><br>
-
-    <label for="">Car colour</label><br>
-    <input type="text" id="car_colour" name="car_colour"><br>
-
-    <input type="submit" value="Submit new car details">
-</form>
-
+        <input type="submit" value="Submit new car details">
+    </form>
+</div>
 {% endblock %}

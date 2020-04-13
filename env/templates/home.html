@@ -4,30 +4,32 @@ home
 {% endblock %}
 {% block content %}
 
-<div>
-    <h1>Welcome to the use car database</h1>
-    <h3>Click on the car manufacturer to look at the cars avalible</h3>
-    <h5>To create a new entry, update a cars details or delete a car just click on the associated buttons</h5>
+<div class="container" id="homepage-heading">
+    <h1>Welcome to the used car database</h1><br>
+    <h4>Below is a list of all the cars in the database currently</h4><br>
+    <h5>To create a new entry, update a cars details or delete a car just click on the associated buttons</h5><br><br>
 
-    <div class="dropdown">
-        <button class="dropbtn">
-            {% for car in cars %}
-                {{car.car_make}}
+    <ul class="collapsible popout">
+        {% for car in cars %}
+        <li>
+            <div class="collapsible-header">
+                <div>
+                    <i class="medium material-icons">arrow_drop_down</i>
+                    <span>{{car.car_make}} {{car.car_model}}</span>
+                </div>
+            </div>
 
-            <div class="dropdown-content">    
+            <div class="collapsible-body" id="dropdown-information">
                 <span>
-                {{car.car_model}}    
-                {{car.car_fuel_type}}
-                {{car.car_engine_size}}
-                {{car.car_gearbox_type}}
-                {{car.car_mileage}}
-                {{car.car_colour}}
+                {{car.car_fuel_type}}<br>
+                {{car.car_engine_size}}<br>
+                {{car.car_gearbox_type}}<br>
+                {{car.car_mileage}}<br>
+                {{car.car_colour}}<br>
                 </span>
             </div>
-            {% endfor %}
-        </button>
-    </div>
-
-</div>
-
+        </li>
+        {% endfor %}
+      </ul><br><br>
+</div>            
 {% endblock %}

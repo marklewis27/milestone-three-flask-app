@@ -5,29 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Link to the materilize styles -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
     
     <!-- Link to the style sheet for the main template of the site -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
 </head>
 
 <body id="main">
-    <div class="navbar">
-        <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-    </div>
-    <div>
-        <a href="{{ url_for('new') }}" class="database-options">Create new entry</a>
-        <a href="{{ url_for('update') }}" class="database-options">Update an entry</a>
-        <a href="{{ url_for('delete') }}" class="database-options">Delete a car</a>
-    </div>
+    <nav>
+        <div class="nav-wrapper blue lighten-3">
+            <div class="container">
+                <a href="{{ url_for('home') }}" class="brand-logo">Homepage</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('new') }}">New car entry</a></li>
+                        <li><a href="{{ url_for('update') }}">Update car details</a></li>
+                        <li><a href="{{ url_for('delete') }}">Delete a car</a></li>
+                    </ul>
+            </div>    
+        </div>
+    </nav><br><br>
 
     <div class="body-content">
         {% block content %}
         {% endblock %}
-        <hr/>
-        <footer>
-            <p>2019</p>
+        <hr/><br><br>
+        <footer class="page-footer blue lighten-3">
+            <div class="container" id="footer-copyright">
+                © 2020 Milestone three project
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div> 
         </footer>
     </div>
+    <!-- Link to the javascript for materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.collapsible').collapsible();
+        });
+    </script>
 </body>
+
 </html>

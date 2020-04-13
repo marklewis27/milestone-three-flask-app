@@ -16,7 +16,8 @@ mongo= PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", cars=mongo.db.cars.find())
+    return render_template("home.html",
+                          cars=mongo.db.cars.find())
 
 
 @app.route("/new/")
@@ -27,7 +28,7 @@ def new():
 def insert_car():
     cars = mongo.db.cars
     cars.insert_one(request.form.to_dict())
-    return redirect(url_for("/home"))
+    return redirect(url_for("home"))
 
 
 @app.route("/update/")
