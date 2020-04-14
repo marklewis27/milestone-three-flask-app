@@ -31,9 +31,12 @@ def insert_car():
     return redirect(url_for("home"))
 
 
-@app.route("/update/")
-def update():
-    return render_template("update.html")
+@app.route('/update/<car_id>')
+def update(car_id):
+    the_car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template("update.html",car=the_car,
+                            categories=all_categories)
 
 
 @app.route("/delete/")
