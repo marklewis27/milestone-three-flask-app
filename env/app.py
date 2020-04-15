@@ -22,7 +22,8 @@ def home():
 
 @app.route("/new/")
 def new():
-    return render_template("new.html")
+    return render_template("new.html",
+    categories=mongo.db.categories.find())
 
 @app.route('/insert_car', methods=['POST'])
 def insert_car():
@@ -30,14 +31,12 @@ def insert_car():
     cars.insert_one(request.form.to_dict())
     return redirect(url_for("home"))
 
-
 @app.route('/update/<car_id>')
 def update(car_id):
     the_car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
     all_categories = mongo.db.categories.find()
     return render_template("update.html",car=the_car,
                             categories=all_categories)
-
 
 @app.route("/delete/")
 def delete():

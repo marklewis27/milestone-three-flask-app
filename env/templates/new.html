@@ -7,44 +7,71 @@ New page
     <H1>Add a new car to the database</H1>
     <form action="{{ url_for('insert_car') }}" method="POST">
 
-        <label for="">Car make</label>
-        <input type="text" id="car_make" name="car_make"><br>
+        <div class="row">
+            <label>Select vechile type</label>
+                <select class="browser-default" id="category" name="category_name">
+                    <option value="" disabled selected>Please select one</option>
+                    {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endfor %}
+                </select><br>
+        </div>
 
-        <label for="">Car model</label>
-        <input type="text" id="car_model" name="car_model"><br>
+        <div class="row">
+            <label for="">Car make</label>
+            <input type="text" id="car_make" name="car_make"><br>
+        </div>
 
-        <label>Fuel type test</label>
-            <select class="browser-default" name="car_fuel_type" id="car_fuel_type">
-                <option value="" disabled selected>Please select one</option>
-                <option value="Petrol">Petrol</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Hybrid">Hybrid</option>
-            </select><br>
-            
-        <label for="">Engine size</label>
-            <select class="browser-default" name="car_engine_size" id="car_engine_size">
-                <option value="" disabled selected>Please select one</option>
-                <option value="less than 1.0">Less than 1 litre</option>
-                <option value="1.0 to 1.3">1.0 to 1.3 litre</option>
-                <option value="1.4 to 1.7">1.4 to 1.7 litre</option>
-                <option value="1.8 to 2.0">1.8 to 2.0 litre</option>
-                <option value="over 2.0">Over 2.0 litre</option>
-            </select><br>
+        <div class="row">
+            <label for="">Car model</label>
+            <input type="text" id="car_model" name="car_model"><br>
+        </div>
 
-        <label for="">Gearbox type</label>
-            <select class="browser-default" name="car_gearbox_type" id="car_gearbox_type">
-                <option value="Manual">Manual</option>
-                <option value="Automatic">Automatic</option>
-                <option value="semi-automatic">semi-automatic</option>
-            </select><br>
+        <div class="row">
+            <label>Fuel type test</label>
+                <select class="browser-default" name="car_fuel_type" id="car_fuel_type">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select><br>
+        </div>
 
-        <label for="">Car Mileage</label>
-        <input type="text" id="car_mileage" name="car_mileage"><br>
+        <div class="row">    
+            <label for="">Engine size</label>
+                <select class="browser-default" name="car_engine_size" id="car_engine_size">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="less than 1.0">Less than 1 litre</option>
+                    <option value="1.0 to 1.3">1.0 to 1.3 litre</option>
+                    <option value="1.4 to 1.7">1.4 to 1.7 litre</option>
+                    <option value="1.8 to 2.0">1.8 to 2.0 litre</option>
+                    <option value="over 2.0">Over 2.0 litre</option>
+                </select><br>
+        </div>        
 
-        <label for="">Car colour</label>
-        <input type="text" id="car_colour" name="car_colour"><br>
+        <div class="row">
+            <label for="">Gearbox type</label>
+                <select class="browser-default" name="car_gearbox_type" id="car_gearbox_type">
+                    <option value="" disabled selected>Please select one</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                    <option value="semi-automatic">semi-automatic</option>
+                </select><br>
+        </div>        
 
-        <input type="submit" value="Submit new car details">
+        <div class="row">
+            <label for="">Car Mileage</label>
+            <input type="text" id="car_mileage" name="car_mileage"><br>
+        </div>
+
+        <div class="row">
+            <label for="">Car colour</label>
+            <input type="text" id="car_colour" name="car_colour"><br>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Submit new car details">
+        </div>
     </form>
 </div>
 {% endblock %}
