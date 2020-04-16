@@ -5,7 +5,7 @@ update page
 {% block content %}
 <div class="container">
     <H1>Edit a car in the database</H1>
-    <form action="{{ url_for('insert_car') }}" method="POST">
+    <form action="{{ url_for('changes', car_id=car._id) }}" method="POST">
 
         <div class="row">
             <label>Select vechile type</label>
@@ -61,11 +61,15 @@ update page
 
         <div class="row">
             <label for="">Gearbox type</label>
-                <select class="browser-default" name="car_gearbox_type" id="car_gearbox_type">
+                <select class="browser-default" name="gearbox_type" id="gearbox_type">
                     <option value="" disabled selected>Please select one</option>
-                    <option value="Manual">Manual</option>
-                    <option value="Automatic">Automatic</option>
-                    <option value="semi-automatic">semi-automatic</option>
+                    {% for gearbox in gearboxes %}
+                        {% if gearbox.gearbox_type == car.gearbox_type %}
+                        <option value="{{gearbox.gearbox_type}}" selected>{{gearbox.gearbox_type}}</option>
+                        {% else %}
+                        <option value="{{gearbox.gearbox_type}}">{{gearbox.gearbox_type}}</option>
+                        {% endif %}
+                    {% endfor %}
                 </select><br>
         </div>        
 
@@ -80,7 +84,7 @@ update page
         </div>
 
         <div class="row">
-            <input type="submit" value="Submit new car details">
+            <input type="submit" value="Submit changes to the database">
         </div>
     </form>
 </div>

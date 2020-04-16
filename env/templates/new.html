@@ -49,11 +49,11 @@ New page
 
         <div class="row">
             <label for="">Gearbox type</label>
-                <select class="browser-default" name="car_gearbox_type" id="car_gearbox_type">
+                <select class="browser-default" name="gearbox_type" id="gearbox_type">
                     <option value="" disabled selected>Please select one</option>
-                    <option value="Manual">Manual</option>
-                    <option value="Automatic">Automatic</option>
-                    <option value="semi-automatic">semi-automatic</option>
+                    {% for gearbox in gearboxes %}
+                        <option value="{{gearbox.gearbox_type}}">{{gearbox.gearbox_type}}</option>
+                    {% endfor %}
                 </select><br>
         </div>        
 
