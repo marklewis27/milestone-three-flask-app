@@ -23,6 +23,8 @@ def home():
 @app.route("/new/")
 def new():
     return render_template("new.html",
+    engines=mongo.db.engines.find(),
+    fuels=mongo.db.fuels.find(),
     categories=mongo.db.categories.find())
 
 @app.route('/insert_car', methods=['POST'])
@@ -35,7 +37,11 @@ def insert_car():
 def update(car_id):
     the_car = mongo.db.cars.find_one({"_id": ObjectId(car_id)})
     all_categories = mongo.db.categories.find()
+    all_engines = mongo.db.engines.find()
+    all_fuels = mongo.db.fuels.find()
     return render_template("update.html",car=the_car,
+                            engines=all_engines,
+                            fuels=all_fuels,
                             categories=all_categories)
 
 @app.route("/delete/")

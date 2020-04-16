@@ -29,23 +29,21 @@ New page
 
         <div class="row">
             <label>Fuel type test</label>
-                <select class="browser-default" name="car_fuel_type" id="car_fuel_type">
+                <select class="browser-default" name="fuel_type" id="fuel_type">
                     <option value="" disabled selected>Please select one</option>
-                    <option value="Petrol">Petrol</option>
-                    <option value="Diesel">Diesel</option>
-                    <option value="Hybrid">Hybrid</option>
+                    {% for fuel in fuels %} 
+                        <option value="{{fuel.fuel_type}}">{{fuel.fuel_type}}</option>
+                    {% endfor %}
                 </select><br>
         </div>
 
         <div class="row">    
             <label for="">Engine size</label>
-                <select class="browser-default" name="car_engine_size" id="car_engine_size">
+                <select class="browser-default" name="engine_size" id="engine_size">
                     <option value="" disabled selected>Please select one</option>
-                    <option value="less than 1.0">Less than 1 litre</option>
-                    <option value="1.0 to 1.3">1.0 to 1.3 litre</option>
-                    <option value="1.4 to 1.7">1.4 to 1.7 litre</option>
-                    <option value="1.8 to 2.0">1.8 to 2.0 litre</option>
-                    <option value="over 2.0">Over 2.0 litre</option>
+                    {% for engine in engines %}
+                        <option value="{{engine.engine_size}}">{{engine.engine_size}}</option>
+                    {% endfor %}
                 </select><br>
         </div>        
 
