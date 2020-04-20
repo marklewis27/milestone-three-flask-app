@@ -14,11 +14,12 @@ home
         <li>
             <div class="collapsible-header col-s8">
                 <div>
-                    <a href="{{url_for('update', car_id=car._id)}}" class="waves-effect waves-light btn"><i class="material-icons right">create</i>Update Details</a>
+                    <a href="{{url_for('delete', car_id=car._id)}}" class="waves-effect waves-light btn"><i class="material-icons left">delete_forever</i>Delete</a>
+                    <a href="{{url_for('update', car_id=car._id)}}" class="waves-effect waves-light btn"><i class="material-icons left">create</i>Update car</a>
                 </div>
-                <div>
-                    <i class="medium material-icons">arrow_drop_down</i>
+                <div class="car-dropdown">
                     <span>{{car.car_make}} {{car.car_model}}</span>
+                    <i class="medium material-icons">arrow_drop_down</i>
                 </div>
             </div>
 

@@ -17,8 +17,7 @@ mongo= PyMongo(app)
 @app.route("/home")
 def home():
     return render_template("home.html",
-                          cars=mongo.db.cars.find())
-
+                            cars=mongo.db.cars.find())
 
 @app.route("/new/")
 def new():
@@ -64,6 +63,7 @@ def changes(car_id):
     return redirect(url_for("home"))
 
 
-@app.route("/delete/")
-def delete():
-    return render_template("delete.html")
+@app.route('/delete/<car_id>')
+def delete(car_id):
+    mongo.db.cars.remove( {'_id': ObjectId(car_id)})
+    return redirect(url_for("home"))
