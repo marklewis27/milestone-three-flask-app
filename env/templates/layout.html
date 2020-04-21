@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
 
-    <link rel="shortcut icon" href="#" />
-
-
     <!-- Link to the materilize styles -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -15,6 +12,9 @@
     
     <!-- Link to the style sheet for the main template of the site -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+
+    <link rel="shortcut icon" href="#" />
+
 </head>
 
 <body id="main">
