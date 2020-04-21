@@ -4,7 +4,7 @@ update page
 {% endblock %}
 {% block content %}
 <div class="container">
-    <H1>Edit a car in the database</H1>
+    <H3 class="center">Edit a car in the database</H3>
     <form action="{{ url_for('changes', car_id=car._id) }}" method="POST">
 
         <div class="row">
@@ -83,7 +83,7 @@ update page
             <input type="text" id="car_colour" name="car_colour" value="{{car.car_colour}}"><br>
         </div>
 
-        <div class="row">
+        <div class="row center">
             <input class="waves-effect waves-light btn center" type="submit" value="Submit changes to the database">
         </div>
     </form>

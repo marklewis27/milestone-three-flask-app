@@ -4,7 +4,7 @@ New page
 {% endblock %}
 {% block content %}
 <div class="container">
-    <H1>Add a new car to the database</H1>
+    <H3 class="center" >Add a new car to the database</H3>
     <form action="{{ url_for('insert_car') }}" method="POST">
 
         <div class="row">
@@ -67,9 +67,8 @@ New page
             <input type="text" id="car_colour" name="car_colour"><br>
         </div>
 
-        <div class="row">
-            <input class="waves-effect waves-light btn center" type="submit" value="Submit new car details" >
-            <i class="material-icons right">send</i>
+        <div class="row center">
+            <input class="waves-effect waves-light btn center" type="submit" value="Submit new car details">
         </div>
     </form>
 </div>

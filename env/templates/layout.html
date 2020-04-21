@@ -32,7 +32,7 @@
         {% endblock %}
         <hr/><br><br>
         <footer class="page-footer blue lighten-3">
-            <div class="container" id="footer-copyright">
+            <div class="container center" id="footer-copyright">
                 © 2020 Milestone three project
             </div> 
         </footer>
@@ -41,6 +41,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
+        function deleteFunction() {
+            alert ("Car has been deleted from the database.")
+        }
+
         $(document).ready(function(){
             $('.collapsible').collapsible();
         });
