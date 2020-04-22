@@ -14,7 +14,7 @@ app.config["MONGO_URI"] = 'mongodb+srv://Mark:Markpassword@cluster0-x6esz.mongod
 
 mongo= PyMongo(app)
 
-
+@app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html",
