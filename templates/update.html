@@ -7,6 +7,10 @@ update page
     <H3 class="center">Edit a car in the database</H3>
     <form action="{{ url_for('changes', car_id=car._id) }}" method="POST">
 
+        <!-- Using an If statment to get the data from the data base and check it against what information is filled 
+            in about that car to display the current details for editing. This also allows the othger options to be
+            displayed and selected for change. This form of updating the details is used for all of the dropdown
+            options on this form --->
         <div class="row">
             <label>Select vechile type</label>
                 <select class="browser-default" id="category" name="category_name">
@@ -21,6 +25,9 @@ update page
                 </select><br>
         </div>
 
+        <!-- For options that have been filled in by a text box and not from a dropdown form this is the format 
+            used to display the current data that is in the database for that car. This is used for all the fields
+            that are like this but with the relevent data being returned to them. -->
         <div class="row">
             <label for="">Car make</label>
             <input type="text" id="car_make" name="car_make" value="{{car.car_make}}"><br>
@@ -83,6 +90,7 @@ update page
             <input type="text" id="car_colour" name="car_colour" value="{{car.car_colour}}"><br>
         </div>
 
+        <!-- The button to submit the changes liked in from materilize  -->
         <div class="row center">
             <input class="waves-effect waves-light btn center" type="submit" value="Submit changes to the database">
         </div>

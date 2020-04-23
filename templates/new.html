@@ -7,6 +7,8 @@ New page
     <H3 class="center" >Add a new car to the database</H3>
     <form action="{{ url_for('insert_car') }}" method="POST">
 
+
+        <!-- Using loops to display a drop down of options, this is used on multiple options on the site -->
         <div class="row">
             <label>Select vechile type</label>
                 <select class="browser-default" id="category" name="category_name">
@@ -17,6 +19,7 @@ New page
                 </select><br>
         </div>
 
+        <!-- A text box allowing the user to enter in the details of the car. This is used on several of the inputs for this form -->
         <div class="row">
             <label for="">Car make</label>
             <input type="text" id="car_make" name="car_make"><br>
