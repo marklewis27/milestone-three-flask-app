@@ -1,7 +1,6 @@
 import os
-from flask import Flask, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for
 from datetime import datetime
-from flask import render_template
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
