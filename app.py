@@ -67,3 +67,13 @@ def changes(car_id):
 def delete(car_id):
     mongo.db.cars.remove( {'_id': ObjectId(car_id)})
     return redirect(url_for("home"))
+
+
+
+if __name__ == '__main__':
+
+    app.run(host=os.environ.get('IP'),
+
+    port=int(os.environ.get('PORT')),
+
+    debug=True)
