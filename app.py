@@ -8,8 +8,6 @@ import re
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'task_manager'
-app.config["MONGO_URI"] = "mongodb://localhost:27017/task_manager"
 
 mongo= PyMongo(app)
 
