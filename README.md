@@ -1,5 +1,6 @@
 # Used car database
-This is a database that can be used by a car dealership to keep a track of the used vechiles they have in stock. It is simple to use and easy to make changes to a car details, delete a car and view the entire stock of the dealership.
+This is a database that can be used by a car dealership to keep a track of the used vechiles they have in stock. It is simple to use and easy to add a new car, make changes to a car details, delete a car and view the entire stock of the dealership.
+This is designed with being a dealer only used app to keep there records and not a public site for them to shop the dealers stock on.
 
 ## Ux
 This site has been designed to be as easy to use as it is functional. I wanted the focus to be on ease of use, a site that anyone would feel comfortable using within a matter of minutes. 
@@ -23,27 +24,28 @@ A admin login for deleting the car from the database with maybe an added popup g
 ## Technologies uesd
 The main technologies used in the project listed below
 1. The main framwork for the project is the Flask framework. https://flask.palletsprojects.com/en/1.1.x/
-1. The python framework is built on the python language. https://www.python.org/downloads/
+1. The Flask framework is built on the python language. https://www.python.org/downloads/
 1. The styling on the page used the materilize styles. https://materializecss.com/
 1. In this project materilize needed some javascript and JQuery to run its styling. https://www.javascript.com/  https://jquery.com/
 1. The basics of this site use the HTML5 programming language. 
 1. Along with the materilize built in styles i have made a few changes of my own using the CSS language for styles.
 
 ## Testing
-During the start of the built i got the basic file structure in place with the basic dependecies in place as well and run these to make sure that the app was generating me a weblink in the console that i could click on and it take me to the site. 
-Once that basic step was in place i could move on, when connecting to the mongo DB database i made a simple entry in to the database and set up the user etc as needed. Then i liked the database in to my app.py file and made a simple template to check that i could reach the database and show the data that was in there. 
+During the start of the build i got the basic file structure in place with the basic dependecies in place as well and run these to make sure that the app was generating me a weblink in the console that i could click on and it take me to the site. 
+Once that basic step was in place i could move on, when connecting to the mongo DB database i made a simple entry in to the database and set up the user etc as needed. Then i linked the database in to my app.py file and made a simple template to check that i could reach the database and show the data that was in there. 
 Adding a new car, when making this part of the site i got the form elements in place and added in the information for a new car, submitted it and the went on to mongo DB to check that it was in the database. Which it was. However at this point i was only getting one car returning to my screen as i hadnt used the correct write up in my app.py to get all of the data but only one, once i changed this i was getting the data that i wanted back from the data base and displaying to the home screen.
-Updating the car details, i made the form for the site and it was displaying as i wanted it to, however, it wasnt entering in the details that were already there for that car in the data base as i wanted them to. Once i got this to return the details for most of the items i had problems with the dropdown options showing the other options still. I was either getting no dropdown or a dropdown with no information in it. An error i was making with the else statement was causing me these problems and once solved i was getting back the data i wanted.
-Delete car, This one was pretty easy to test. I made a few cars using the new car form, checked that they had gone over to the database which they had. I then went back to the site to delete them using the button, once clicked they went from the screen, i then went back to the mongo DB site to check that they had been removed, which that had so that was working well.
+Updating the car details, i made the form for the site and it was displaying as i wanted it to, however, it wasnt entering in the details that were already there for that car in the data base as i wanted them to. Once i got this to return the details for most of the items i had problems with the dropdown options not showing the other options still. I was either getting no dropdown or a dropdown with no information in it. An error i was making with the else statement was causing me these problems and once solved i was getting back the data i wanted.
+Delete car, This one was pretty easy to test. I made a few cars using the new car form, checked that they had gone over to the database which they had. I then went on to the homepage of the site to check all the information was showing on screen as well. I then went to delete them using the button, once clicked they went from the screen, i then went back to the mongo DB site to check that they had been removed, which that had so that was working well.
 Mobile testing. The form elements i was using i was making sure were responsive to mobile, along with the buttons i made sure that when they were in place on the desktop view that they still rendered and worked when using a mobile device. 
-I did have some issuses with the Navbar, to begin with i had the option to add the new car over to the right but when i went in to mobile view it would not be there anymore. A change to the layout to keep this in the center made it clearer for the user i felt and also made it work perfectly on mobile. All the other text on the screen i kept in this centre allignement to keep the layout simple and clean across all pages and on mobile responsive to the smaller size screen giving a good user experience still.
+On mobile I did have some issuses with the Navbar, to begin with i had the option to add the new car over to the right but when i went in to mobile view it would not be there anymore. A change to the layout to keep this in the center made it clearer for the user i felt and also made it work perfectly on mobile. All the other text on the screen i kept in this centre allignement to keep the layout simple and clean across all pages and on mobile responsive to the smaller size screen giving a good user experience still.
 During the course of this project i have made sure to keep checking along the way that any changes i make work, and are bug free. using the dev tools to check for errors on the page and the app log in VS code for any problems that may occur.
 
 ### Deployment 
-I have been backing up the work to github after every session i would sit at my computer working on this project. When it came to the deployment i set up a Heroku account and ran in to a few problems.
+I have been backing up the work to github after every session i would sit at my computer working on this project. For every commit i made to github i was sure to put a comment in the push to explain what i had done on the project at that time. When it came to the deployment i set up a Heroku account and ran in to a few problems.
 1. I didnt have a procfile setup in my file structure so i had to add this in.
 1. I needed to tell heroku which version of python i was using as it was picking it up by default.
 1. After these issues were fixed i was still getting errors and this was eventually solved by adding in th code at the bottom of the app.py file and specifying in heroku the IP port and value. Once i'd done these things it was working again.
+1. I needed to move the mongo db login details out of the app.py file and in to the config vars in heroku, i had them setup correctly in heroku. however, i needed to add in the correct code to the app.py file as i was getting back an error because heroku could'nt work out my mongo db settings. Once i got that fixed it was working fine again.
 
 ### Credits
 1. The startup of the project i followed the flask in vs code tutorial to get the basic file structure and dependancies installed for this project
@@ -51,7 +53,7 @@ I have been backing up the work to github after every session i would sit at my 
 1. The update displaying the data that was already there for a car i used the course as a reference to get me started and from there made my own for other options and added a lot more to it.
 
 ### Media
-The only images and fonts used were from materilize
+The only images and fonts used were from materilize.
 
 ### Acknowledgements
-Autotrader was the insiration for this site build
+Autotrader was the inspiration for this site build, I then made it in to a deal focused program rather than a public one.
