@@ -47,6 +47,8 @@ I have been backing up the work to github after every session i would sit at my 
 1. After these issues were fixed i was still getting errors and this was eventually solved by adding in th code at the bottom of the app.py file and specifying in heroku the IP port and value. Once i'd done these things it was working again.
 1. I needed to move the mongo db login details out of the app.py file and in to the config vars in heroku, i had them setup correctly in heroku. however, i needed to add in the correct code to the app.py file as i was getting back an error because heroku could'nt work out my mongo db settings. Once i got that fixed it was working fine again.
 
+The final project can be found at the following web address. https://milestone-three-flask-app.herokuapp.com/
+
 ### Credits
 1. The startup of the project i followed the flask in vs code tutorial to get the basic file structure and dependancies installed for this project
 1. For the delete functionaly i refered back to the course for how to get this setup.
